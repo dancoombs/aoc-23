@@ -21,9 +21,9 @@ pub fn part_two(input: &str) -> Option<u64> {
         .map(|l| {
             let (springs, counts) = parse_line(l);
 
-            let mut unfold_springs = vec![];
-            let mut unfold_counts = vec![];
-            for _ in 0..5 {
+            let mut unfold_springs = springs.clone();
+            let mut unfold_counts = counts.clone();
+            for _ in 0..4 {
                 unfold_springs.push('?');
                 unfold_springs.extend(springs.iter());
                 unfold_counts.extend(counts.iter());
